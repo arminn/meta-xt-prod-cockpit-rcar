@@ -1,0 +1,29 @@
+From 9490d6e7526a788f2dce515425258a99d4da672f Mon Sep 17 00:00:00 2001
+From: Andrii Chepurnyi <andrii_chepurnyi@epam.com>
+Date: Wed, 18 May 2022 11:04:49 +0200
+Subject: [PATCH] HACK: disable warning print
+
+Disable warning print to speed up start by 3 sec.
+
+Signed-off-by: Andrii Chepurnyi <andrii_chepurnyi@epam.com>
+---
+ xen/drivers/char/console.c | 3 +--
+ 1 file changed, 1 insertion(+), 2 deletions(-)
+
+diff --git a/xen/drivers/char/console.c b/xen/drivers/char/console.c
+index 2358375170..220116d04c 100644
+--- a/xen/drivers/char/console.c
++++ b/xen/drivers/char/console.c
+@@ -1078,8 +1078,7 @@ void __init console_endboot(void)
+         printk(" (Rate-limited: %s)", loglvl_str(xenlog_guest_upper_thresh));
+     printk("\n");
+
+-    warning_print();
+-
++    //warning_print();
+     video_endboot();
+ 
+     /*
+--
+2.25.1
+
