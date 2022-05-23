@@ -1,0 +1,14 @@
+[Unit]
+Description=PV
+Wants=dev-mmcblk0p2.device
+After=dev-mmcblk0p2.device
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/xenstore-write drivers/pvblock/status ready
+RemainAfterExit=yes
+ExecStopPost=/usr/bin/xenstore-write drivers/pvblock/status dead
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
