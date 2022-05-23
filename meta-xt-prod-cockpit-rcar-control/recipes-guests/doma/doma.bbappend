@@ -6,11 +6,13 @@ SRC_URI += "\
     file://doma-vdevices.cfg \
     file://doma-set-root \
     file://doma-set-root.conf \
+    file://doma-start-dependency.conf \
 "
 
 FILES_${PN} += " \
     ${libdir}/xen/bin/doma-set-root \
     ${sysconfdir}/systemd/system/doma.service.d/doma-set-root.conf \
+    ${sysconfdir}/systemd/system/doma.service.d/doma-start-dependency.conf \
 "
 
 do_install_append() {
@@ -22,4 +24,5 @@ do_install_append() {
 
     install -d ${D}${sysconfdir}/systemd/system/doma.service.d
     install -m 0644 ${WORKDIR}/doma-set-root.conf ${D}${sysconfdir}/systemd/system/doma.service.d
+    install -m 0644 ${WORKDIR}/doma-start-dependency.conf ${D}${sysconfdir}/systemd/system/doma.service.d
 }
