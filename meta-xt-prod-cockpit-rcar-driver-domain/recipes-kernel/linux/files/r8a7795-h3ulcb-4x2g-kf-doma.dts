@@ -48,9 +48,20 @@
 	};
 
 	rvgc {
-		nr-displays = <0x1>;
-		display-mappings = <0x1>;
-		display-layer = <0x3>;
+                displays {
+                        display-0 {
+                                display-map = <0x1>;
+                                layers {
+                                        primary {
+                                                layer-map = <0x3>;
+                                                size-w = <0x780>;
+                                                size-h = <0x438>;
+                                                pos-x = <0x0>;
+                                                pos-y = <0x0>;
+                                        };
+                                };
+                        };
+                };
 
 		dma-ranges = <0x0 0x0 0x0 0x0 0x1 0x0>;
 		rvgc-memory {
