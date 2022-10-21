@@ -137,11 +137,11 @@ components:
 
         # get xen customized under cr7
         - [XEN_URL_pn-xen-tools, "%{XEN_URL}"]
-        - [SRCREV_pn-xen-tools, "d9703fe08c3d32dbfb89ab10502ad2ffeb52de62"]
+        - [SRCREV_pn-xen-tools, "995f0fcf697d8d8690ed02e0990b2be074ebe8cb"]
         - [XEN_URL_pn-xen, "%{XEN_URL}"]
         - [XEN_REL_pn-xen, "4.16"]
         - [XEN_REL_pn-xen-tools, "4.16"]
-        - [SRCREV_pn-xen, "d9703fe08c3d32dbfb89ab10502ad2ffeb52de62"]
+        - [SRCREV_pn-xen, "995f0fcf697d8d8690ed02e0990b2be074ebe8cb"]
 
       layers:
         - "../meta-virtualization"
